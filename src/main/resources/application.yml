@@ -1,0 +1,21 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: spring-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+#zuul:
+#  routes:
+#    service-provide: /sp/** 
+#  ignored-services: service-provide
+
+zuul:
+  routes:
+    route-name:
+      url: http://localhost:8080/
+      path: /sp/**
